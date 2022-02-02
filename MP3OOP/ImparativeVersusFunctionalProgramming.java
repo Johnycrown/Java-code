@@ -1,6 +1,7 @@
 package Chapter11.MP3OOP;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ImparativeVersusFunctionalProgramming {
     int getTopScore(List<Student> students) {
@@ -10,6 +11,15 @@ public class ImparativeVersusFunctionalProgramming {
             topScore = Math.max(topScore, s.getScore());
         }
         return topScore;
+
+    }
+    //funtionalProgramming
+    int getTopScoreFunctional(List<Student> students) {
+        return students.stream()
+                .filter(Objects::nonNull)
+                .mapToInt(Student::getScore)
+                .max()
+                .orElse(0);
     }
 
 }
