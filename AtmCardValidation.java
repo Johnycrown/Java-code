@@ -43,6 +43,6 @@ public class AtmCardValidation {
 return total;
     }
    public static boolean isCardValid(long cardNumber){
-        
+        return true;
    }
 }
